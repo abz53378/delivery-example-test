@@ -11,3 +11,8 @@ review:
   environment: pr${{ pr }}
   transient_environment: true
   production_environment: false
+
+review2:
+  environment: test
+  transient_environment: true
+  production_environment: false
