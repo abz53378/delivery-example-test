@@ -8,11 +8,11 @@ jobs:
     - name: 'Checkout'
       uses: 'actions/checkout@v1'
 
-    - name: 'Deployment pending'
-      uses: 'deliverybot/deployment-status@master'
-      with:
-        state: 'pending'
-        token: '${{ github.token }}'
+    # - name: 'Deployment pending'
+    #   uses: 'deliverybot/deployment-status@master'
+    #   with:
+    #     state: 'pending'
+    #     token: '${{ github.token }}'
 
     - name: 'Deploy ${{ github.event.deployment.environment }}'
       run: |
