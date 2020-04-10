@@ -20,16 +20,16 @@ jobs:
         echo "environment - ${{ github.event.deployment.task }}"
         echo "payload - ${{ github.event.deployment.payload }}"
 
-    - name: 'Deployment success'
-      if: success()
-      uses: 'deliverybot/deployment-status@master'
-      with:
-        state: 'success'
-        token: '${{ github.token }}'
+    # - name: 'Deployment success'
+    #   if: success()
+    #   uses: 'deliverybot/deployment-status@master'
+    #   with:
+    #     state: 'success'
+    #     token: '${{ github.token }}'
 
-    - name: 'Deployment failure'
-      if: failure()
-      uses: 'deliverybot/deployment-status@master'
-      with:
-        state: 'failure'
-        token: '${{ github.token }}'
+    # - name: 'Deployment failure'
+    #   if: failure()
+    #   uses: 'deliverybot/deployment-status@master'
+    #   with:
+    #     state: 'failure'
+    #     token: '${{ github.token }}'
