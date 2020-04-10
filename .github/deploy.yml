@@ -8,12 +8,12 @@ staging:
   production_environment: false
 
 review:
+  required_contexts: [build]
   environment: pr${{ pr }}
   transient_environment: true
   production_environment: false
 
 review2:
-  required_contexts: [build]
   environment: test
   transient_environment: true
   production_environment: false
