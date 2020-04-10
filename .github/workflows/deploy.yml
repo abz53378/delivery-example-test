@@ -2,7 +2,7 @@ name: 'Deploy'
 on: ['deployment']
 
 jobs:
-  deployment:
+  other:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Checkout'
