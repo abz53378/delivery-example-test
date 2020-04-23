@@ -1,0 +1,21 @@
+name: Github Action Push Test
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  tag-build:
+    name: tag-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: print event
+        run: |
+          echo ${{github.event}}
+      - name: if
+        if: github.event.ref_type == 'tag'
+        run: |
+          echo 'hello'
