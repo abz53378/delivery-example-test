@@ -19,6 +19,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: if
-        if: github.event.ref_type == 'tag'
+        if: startsWith(github.ref, 'ref/tags/')
         run: |
           echo 'hello'
