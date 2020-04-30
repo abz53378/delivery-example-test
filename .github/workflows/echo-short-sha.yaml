@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Get short sha
         id: vars
-        run: echo "::set-output name=short_sha::$(git rev-parse --short HEAD)"
+        run: echo "::set-output name=short_sha::$(GITHUB_REF::7)"
       - name: Echo short sha
         run: echo ${{ steps.vars.outputs.short_sha }}
