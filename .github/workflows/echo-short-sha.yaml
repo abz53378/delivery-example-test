@@ -1,9 +1,12 @@
-name: 'Test'
+name: 'SHA'
 on: [push]
 
 jobs:
   short-sha:
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Echo short sha
-        run: echo $(echo ${GITHUB_SHA} | cut -c1-8)
+      - name: Get short sha
+        id: vars
+        run: echo $GITHUB_SHA
+        env:
+          GITHUB_SHA: $(echo ${GITHUB_SHA} | cut -c1-8)
