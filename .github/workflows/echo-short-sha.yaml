@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Get short sha
         id: vars
-        run: echo $GITHUB_SHA
+        run: echo $SHORT_SHA
         env:
-          GITHUB_SHA: $(echo ${GITHUB_SHA} | cut -c1-8)
+          SHORT_SHA: $(echo ${GITHUB_SHA} | cut -c1-8)
