@@ -9,4 +9,4 @@ jobs:
         id: vars
         run: echo "::set-output name=short_sha::$(echo ${GITHUB_SHA} | cut -c1-8)"
       - name: Echo short sha
-        run: echo ${{ steps.vars.outputs.short-sha }}
+        run: echo ${{ steps.vars.outputs.short_sha }}
