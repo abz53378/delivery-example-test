@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: Get short sha
         id: vars
-        run: echo "::set-output name=short_sha::$(GITHUB_SHA::7)"
+        run: echo "::set-output name=short_sha::$(GITHUB_SHA)"
         env:
-          GITHUB_SHA: ${{github.sha}}
+          GITHUB_SHA: ${{github.sha::7}}
       - name: Echo short sha
         run: echo ${{ steps.vars.outputs.short_sha }}
