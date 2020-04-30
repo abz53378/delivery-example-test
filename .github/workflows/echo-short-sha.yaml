@@ -5,10 +5,5 @@ jobs:
   short-sha:
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Get short sha
-        id: vars
-        run: echo "::set-output name=short_sha::$(GITHUB_SHA)"
-        env:
-          GITHUB_SHA: ${{github.sha::7}}
       - name: Echo short sha
-        run: echo ${{ steps.vars.outputs.short_sha }}
+        run: echo $(echo ${GITHUB_SHA} | cut -c1-8)
