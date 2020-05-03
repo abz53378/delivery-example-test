@@ -1,0 +1,12 @@
+name: 'Test'
+on: [push]
+
+jobs:
+  short-sha:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Get short sha
+        id: vars
+        run: echo "::set-output name=short_sha::$(echo ${GITHUB_SHA} | cut -c1-8)"
+      - name: Echo short sha
+        run: echo ${{ steps.vars.outputs.short_sha }}
