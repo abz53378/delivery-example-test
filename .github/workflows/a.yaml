@@ -1,0 +1,16 @@
+name: Github Action Push Test
+
+on: [push]
+
+jobs:
+  repo_dispatch:
+    name: repo dispatch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: abz53378/delivery-example
+          event-type: custom-event-name
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
