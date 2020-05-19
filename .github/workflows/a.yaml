@@ -11,6 +11,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: abz53378/delivery-example
+          repository: abz53378/delivery-example-test
           event-type: custom-event-name
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
